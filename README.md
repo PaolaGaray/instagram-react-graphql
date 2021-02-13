@@ -2,44 +2,55 @@
 
 ## Routes
 
-- / (feed page)
+### `/ (feed page)`
 
-Components:
+#### Components:
 
 - FeedPost
 - FeedPostSkeleton
 - FeedSideSuggestions
 
-- /explore (explore page)
-  Components:
+### `/explore (explore page)`
+
+#### Components:
+
 - ExploreSuggestions
 - ExploreGrid
 
-- /p/:postId (post page)
-  Components:
+### `/p/:postId (post page)`
+
+#### Components:
 - Post
 - PostSkeleton
 - PostModal
 - MorePostFromUser
 
-- notification
-  Components:
+### `notification`
+
+#### Components:
 - NotificationList
 - NotificationToolTip
 
-- /:username (profile page)
-  Components
+
+### `/:username (profile page)`
+
+#### Components:
 - ProfileTabs
 
-- /accounts/edit/ (edit profile page)
+### `/accounts/edit/ (edit profile page)`
 
-- /accounts/login (login page)
 
-- accounts/emailsignup/ (signup page)
+### `/accounts/login (login page)`
 
-- - (not found page)
 
-### Shared Components
+### `/accounts/emailsignup/ (signup page)`
+
+
+### `/* (not found page)`
+
+
+
+## Shared Components
 
 - Navbar
 - FollowSuggestions
