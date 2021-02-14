@@ -20,12 +20,12 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={FeedPage} />
-        <Route path="/explore" component={ExportPage} />
+        <Route exact path="/explore" component={ExportPage} />
         <Route exact path="/p/:postId" component={PostPage} />
         <Route exact path="/:username" component={ProfilePage} />
-        <Route path="/accounts/edit" component={EditProfilePage} />
-        <Route path="/accounts/login" component={LoginPage} />
-        <Route path="/accounts/emailsignup" component={SignUpPage} />
+        <Route exact path="/accounts/edit" component={EditProfilePage} />
+        <Route exact path="/accounts/login" component={LoginPage} />
+        <Route exact path="/accounts/emailsignup" component={SignUpPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </Router>
