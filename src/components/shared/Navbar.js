@@ -18,10 +18,8 @@ function Navbar() {
 };
 
 
-
 function Logo() {
   const classes = useNavbarStyles();
-
   return (
     <div className={classes.logoContainer}>
       <Link to="/">

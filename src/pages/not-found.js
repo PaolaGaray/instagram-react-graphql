@@ -19,7 +19,6 @@ function NotFoundPage() {
               </Typography>
           </Link>
         </Typography>
-
       </Layout>
   );
 }
