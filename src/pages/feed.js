@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Hidden } from "@material-ui/core"
 
 import { useFeedPageStyles } from "../styles";
@@ -7,10 +7,16 @@ import UserCard from '../components/shared/UserCard';
 import FeedPost from '../components/feed/FeedPost';
 import FeedSideSuggestions from '../components/feed/FeedSideSuggestions';
 import { getDefaultPost } from '../data';
+import LoadingScreen from "../components/shared/LoadingScreen";
+import { LoadingLargeIcon } from "../icons";
 
 
 function FeedPage() {
   const classes = useFeedPageStyles();
+  const [isEndOfFeed] = useState(false);
+
+  let loading = false;
+  if(loading) return <LoadingScreen />
 
   return (
     <Layout>
@@ -30,6 +36,7 @@ function FeedPage() {
                     </div>
                 </div>
             </Hidden>
+            {!isEndOfFeed && <LoadingLargeIcon />}
         </div>
     </Layout>
   );
