@@ -62,7 +62,7 @@ function FollowSuggestionsItem({ user }) {
           className={classes.text}
           align="center"
         >
-          {name}
+          {username}
         </Typography>
       </div>
   );

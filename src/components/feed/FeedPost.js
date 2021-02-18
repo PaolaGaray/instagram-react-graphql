@@ -19,10 +19,12 @@ import {
   TextField
 } from "@material-ui/core";
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
+import OptionsDialog from "../shared/OptionsDialog";
 
 function FeedPost({ post }) {
   const classes = useFeedPostStyles();
   const [showCaption, setCaption] = useState(false);
+  const [showOptionsDialog, setOptionsDialog] = useState(false)
   const { id, media, likes, user, caption, comments } = post;
 
   return (
@@ -31,7 +33,7 @@ function FeedPost({ post }) {
         {/* Feed Post Header */}
         <div className={classes.postHeader}>
           <UserCard user={user} />
-          <MoreIcon className={classes.moreIcon} />
+          <MoreIcon className={classes.moreIcon} onClick={() => setOptionsDialog(true)}/>
         </div>
         {/* Feed Post Image */}
         <div>
@@ -118,6 +120,7 @@ function FeedPost({ post }) {
           <Comment />
         </Hidden>
       </article>
+      {showOptionsDialog && <OptionsDialog onClose = {() => setOptionsDialog(false)} />}
     </>
   );
 }
