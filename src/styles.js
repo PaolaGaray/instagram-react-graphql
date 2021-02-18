@@ -855,18 +855,18 @@ export const useFollowSuggestionsStyles = makeStyles(theme => ({
     maxWidth: "100vw"
   },
   slide: {
-    padding: "10px 0px 20px 0px !important",
+    // padding: "10px 0px 20px 0px !important",
     marginBottom,
-    // border,
-    borderTop: "none",
+    border,
+    // borderTop: "none",
     "& .slick-slide > div": {
       background: "#ffffff",
-      border,
-      margin: "0px 10px !important",
-      padding: "20px !important"
+      // border,
+      // margin: "0px 10px !important",
+      padding: "12px !important"
     },
     "& .slick-next:before, & .slick-prev:before": {
-      color: "rgb(38, 38, 38)",
+      color: "rgb(145, 144, 144)",
       fontSize: "24px !important"
     }
   },
@@ -877,16 +877,20 @@ export const useFollowSuggestionsStyles = makeStyles(theme => ({
   skeleton: {
     display: "grid",
     gridAutoFlow: "column",
-    marginBottom,
+    // marginBottom,
     gridGap: 16
   },
   avatar: {
-    width: 54,
-    height: 54
+    width: "57px !important",
+    height: 57,
+    border: "1px solid rgba(var(--i1d,255,0,0),1)",
+    borderRadius: "50%",
+    padding: 10
   },
   avatarImg: {
     userSelect: "none"
   },
+
   text: {
     textOverflow: "ellipsis",
     overflow: "hidden",

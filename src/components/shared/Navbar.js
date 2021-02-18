@@ -32,10 +32,10 @@ import NotificationList from "../notification/NotificationList";
 function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
   const history = useHistory();
-  const [isLoadingPage, setLoadingPage] = React.useState(true);
+  const [isLoadingPage, setLoadingPage] = useState(true);
   const path = history.location.pathname;
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoadingPage(false);
   }, [path]);
 
