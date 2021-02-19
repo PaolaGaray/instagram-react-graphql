@@ -1,9 +1,13 @@
 import React from "react";
-
-import Layout from '../components/shared/Layout';
+import Layout from "../components/shared/Layout";
+import ExploreGrid from "../components/explore/ExploreGrid";
 
 function ExplorePage() {
-  return <Layout>ExplorePage</Layout>;
+  return (
+    <Layout>
+      <ExploreGrid />
+    </Layout>
+  );
 }
 
 export default ExplorePage;

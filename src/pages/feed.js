@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, lazy } from "react";
 import { Hidden } from "@material-ui/core";
 
 import { useFeedPageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import UserCard from "../components/shared/UserCard";
-import FeedPost from "../components/feed/FeedPost";
+import FeedPostSkeleton from "../components/feed/FeedPostSkeleton";
 import FeedSideSuggestions from "../components/feed/FeedSideSuggestions";
 import { getDefaultPost } from "../data";
 import LoadingScreen from "../components/shared/LoadingScreen";
 import { LoadingLargeIcon } from "../icons";
 import FollowSuggestions from '../components/shared/FollowSuggestions';
+const FeedPost = lazy(() => import ('../components/feed/FeedPost'))
 
 function FeedPage() {
   const classes = useFeedPageStyles();
@@ -26,7 +27,9 @@ function FeedPage() {
           <FollowSuggestions />
           {/* Feed Posts */}
           {Array.from({ length: 5 }, () => getDefaultPost()).map(post => (
-            <FeedPost key={post.id} post={post} />
+            <React.Suspense key={post.id} fallback={<FeedPostSkeleton />}>
+              <FeedPost post={post} />
+            </React.Suspense>
           ))}
         </div>
         {/* Sidebar */}
