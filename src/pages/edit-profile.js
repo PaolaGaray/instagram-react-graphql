@@ -16,8 +16,6 @@ import { Menu } from "@material-ui/icons";
 import { defaultCurrentUser } from "../data";
 import ProfilePicture from "../components/shared/ProfilePicture";
 
-
-
 function EditProfilePage({ history }) {
   const classes = useEditProfilePageStyles();
   const path = history.location.pathname;

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useNavbarStyles, WhiteTooltip, RedTooltip } from "../../styles";
 import {
   AppBar,
   Hidden,
@@ -10,9 +11,6 @@ import {
   Zoom
 } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
-import { useNProgress } from "@tanem/react-nprogress";
-
-import { useNavbarStyles, WhiteTooltip, RedTooltip } from "../../styles";
 import logo from "../../images/logo.png";
 import {
   LoadingIcon,
@@ -27,15 +25,15 @@ import {
 import NotificationTooltip from "../notification/NotificationTooltip";
 import { defaultCurrentUser, getDefaultUser } from "../../data";
 import NotificationList from "../notification/NotificationList";
-
+import { useNProgress } from "@tanem/react-nprogress";
 
 function Navbar({ minimalNavbar }) {
   const classes = useNavbarStyles();
   const history = useHistory();
-  const [isLoadingPage, setLoadingPage] = useState(true);
+  const [isLoadingPage, setLoadingPage] = React.useState(true);
   const path = history.location.pathname;
 
-  useEffect(() => {
+  React.useEffect(() => {
     setLoadingPage(false);
   }, [path]);
 
@@ -73,13 +71,13 @@ function Logo() {
 
 function Search({ history }) {
   const classes = useNavbarStyles();
-  const [loading] = useState(false);
-  const [results, setResults] = useState([]);
-  const [query, setQuery] = useState("");
+  const [loading] = React.useState(false);
+  const [results, setResults] = React.useState([]);
+  const [query, setQuery] = React.useState("");
 
   const hasResults = Boolean(query) && results.length > 0;
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!query.trim()) return;
     setResults(Array.from({ length: 5 }, () => getDefaultUser()));
   }, [query]);
@@ -146,10 +144,10 @@ function Search({ history }) {
 
 function Links({ path }) {
   const classes = useNavbarStyles();
-  const [showTooltip, setTooltip] = useState(true);
-  const [showList, setList] = useState(false);
+  const [showTooltip, setTooltip] = React.useState(true);
+  const [showList, setList] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timeout = setTimeout(handleHideTooltip, 5000);
     return () => {
       clearTimeout(timeout);

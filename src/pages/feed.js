@@ -1,20 +1,19 @@
-import React, { useState, lazy } from "react";
-import { Hidden } from "@material-ui/core";
-
+import React from "react";
 import { useFeedPageStyles } from "../styles";
 import Layout from "../components/shared/Layout";
 import UserCard from "../components/shared/UserCard";
-import FeedPostSkeleton from "../components/feed/FeedPostSkeleton";
+// import FeedPost from "../components/feed/FeedPost";
 import FeedSideSuggestions from "../components/feed/FeedSideSuggestions";
 import { getDefaultPost } from "../data";
+import { Hidden } from "@material-ui/core";
 import LoadingScreen from "../components/shared/LoadingScreen";
 import { LoadingLargeIcon } from "../icons";
-import FollowSuggestions from '../components/shared/FollowSuggestions';
-const FeedPost = lazy(() => import ('../components/feed/FeedPost'))
+import FeedPostSkeleton from "../components/feed/FeedPostSkeleton";
+const FeedPost = React.lazy(() => import("../components/feed/FeedPost"));
 
 function FeedPage() {
   const classes = useFeedPageStyles();
-  const [isEndOfFeed] = useState(false);
+  const [isEndOfFeed] = React.useState(false);
 
   let loading = false;
   if (loading) return <LoadingScreen />;
@@ -22,15 +21,15 @@ function FeedPage() {
   return (
     <Layout>
       <div className={classes.container}>
+        {/* Feed Posts */}
         <div>
-          {/* Feed Follow Sugestions */}
-          <FollowSuggestions />
-          {/* Feed Posts */}
-          {Array.from({ length: 5 }, () => getDefaultPost()).map(post => (
-            <React.Suspense key={post.id} fallback={<FeedPostSkeleton />}>
-              <FeedPost post={post} />
-            </React.Suspense>
-          ))}
+          {Array.from({ length: 5 }, () => getDefaultPost()).map(
+            (post, index) => (
+              <React.Suspense key={post.id} fallback={<FeedPostSkeleton />}>
+                <FeedPost index={index} post={post} />
+              </React.Suspense>
+            )
+          )}
         </div>
         {/* Sidebar */}
         <Hidden smDown>
@@ -41,7 +40,6 @@ function FeedPage() {
             </div>
           </div>
         </Hidden>
-
         {!isEndOfFeed && <LoadingLargeIcon />}
       </div>
     </Layout>

@@ -1,40 +1,42 @@
 import React from "react";
 import { useSignUpPageStyles } from "../styles";
-import { Button, Card, TextField, Typography } from '@material-ui/core';
+import SEO from "../components/shared/Seo";
+import { Card, Typography, TextField, Button } from "@material-ui/core";
+import { LoginWithFacebook } from "./login";
 import { Link } from "react-router-dom";
-
-import { LoginWithFacebook } from '../pages/login';
-import SEO from '../components/shared/Seo';
-
 
 function SignUpPage() {
   const classes = useSignUpPageStyles();
-
   return (
     <>
-      <SEO title="Sign up"/>
+      <SEO title="Sign up" />
       <section className={classes.section}>
         <article>
           <Card className={classes.card}>
-            <div className={classes.cardHeader}/>
+            <div className={classes.cardHeader} />
             <Typography className={classes.cardHeaderSubHeader}>
               Sign up to see photos and videos from your friends.
             </Typography>
-            <LoginWithFacebook color="primary" iconColor="white" variant="contained"/>
+            <LoginWithFacebook
+              color="primary"
+              iconColor="white"
+              variant="contained"
+            />
             <div className={classes.orContainer}>
-              <div className={classes.orLine}/>
-                <div>
-                    <Typography variant="body2" color="textSecondary">
-                        OR
-                    </Typography>
-                </div>
-              <div className={classes.orLine}/>
+              <div className={classes.orLine} />
+              <div>
+                <Typography variant="body2" color="textSecondary">
+                  OR
+                </Typography>
+              </div>
+              <div className={classes.orLine} />
             </div>
             <form>
               <TextField
                 fullWidth
                 variant="filled"
                 label="Email"
+                type="email"
                 margin="dense"
                 className={classes.textField}
               />
@@ -73,16 +75,15 @@ function SignUpPage() {
               </Button>
             </form>
           </Card>
-          <Card className={classes.loginCard} >
+          <Card className={classes.loginCard}>
             <Typography align="right" variant="body2">
-                Have an account?
+              Have an account?
             </Typography>
             <Link to="/accounts/login">
-                <Button color="primary" className={classes.signUpButton}>
-                  Log In
-                </Button>
+              <Button color="primary" className={classes.loginButton}>
+                Log in
+              </Button>
             </Link>
-
           </Card>
         </article>
       </section>

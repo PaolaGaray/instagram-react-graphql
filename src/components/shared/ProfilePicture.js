@@ -4,7 +4,7 @@ import { Person } from "@material-ui/icons";
 
 function ProfilePicture({
   size,
-  image = "https://scontent-bog1-1.cdninstagram.com/v/t51.2885-19/s150x150/30920544_298371590698348_4269672236434063360_n.jpg?_nc_ht=scontent-bog1-1.cdninstagram.com&_nc_ohc=hmQCN4Zfn2gAX8y8nst&tp=1&oh=27ec4ba469458416e06c9e46f603dc7e&oe=6058E85A",
+  image = "https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/82559664_3161307737426774_8687807477812559872_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=llb3VCRb-mkAX_XTEi3&oh=64f0323db646c01299e513e3337b83ff&oe=5E8620BF",
   isOwner
 }) {
   const classes = useProfilePictureStyles({ size, isOwner });

@@ -1,16 +1,14 @@
-import React, { useRef } from "react";
-import { Grid, Avatar, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import useOutsideClick from "@rooks/use-outside-click";
-
+import React from "react";
 import { useNotificationListStyles } from "../../styles";
 import { defaultNotifications } from "../../data";
+import { Grid, Avatar, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import FollowButton from "../shared/FollowButton";
-
+import useOutsideClick from "@rooks/use-outside-click";
 
 function NotificationList({ handleHideList }) {
   const classes = useNotificationListStyles();
-  const listContainerRef = useRef();
+  const listContainerRef = React.useRef();
   useOutsideClick(listContainerRef, handleHideList);
 
   return (
