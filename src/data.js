@@ -5,7 +5,7 @@ export const defaultUser = {
   username: "username",
   name: "name",
   profile_image:
-    "https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/82559664_3161307737426774_8687807477812559872_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=llb3VCRb-mkAX_XTEi3&oh=64f0323db646c01299e513e3337b83ff&oe=5E8620BF"
+    "https://scontent-bog1-1.cdninstagram.com/v/t51.2885-19/s150x150/30920544_298371590698348_4269672236434063360_n.jpg?_nc_ht=scontent-bog1-1.cdninstagram.com&_nc_ohc=hmQCN4Zfn2gAX8y8nst&tp=1&oh=27ec4ba469458416e06c9e46f603dc7e&oe=6058E85A"
   // profile_image:
   // "https://instagram.com/static/images/anonymousUser.jpg/23e7b3b2a737.jpg"
 };
@@ -16,7 +16,7 @@ export function getDefaultUser() {
     username: "username",
     name: "name",
     profile_image:
-      "https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/82559664_3161307737426774_8687807477812559872_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=llb3VCRb-mkAX_XTEi3&oh=64f0323db646c01299e513e3337b83ff&oe=5E8620BF"
+      "https://scontent-bog1-1.cdninstagram.com/v/t51.2885-19/s150x150/30920544_298371590698348_4269672236434063360_n.jpg?_nc_ht=scontent-bog1-1.cdninstagram.com&_nc_ohc=hmQCN4Zfn2gAX8y8nst&tp=1&oh=27ec4ba469458416e06c9e46f603dc7e&oe=6058E85A"
   };
 }
 
@@ -65,7 +65,7 @@ export const defaultCurrentUser = {
   username: "pao",
   name: "Paola Garay",
   profile_image:
-    "https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/82559664_3161307737426774_8687807477812559872_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=llb3VCRb-mkAX_XTEi3&oh=64f0323db646c01299e513e3337b83ff&oe=5E8620BF",
+    "https://scontent-bog1-1.cdninstagram.com/v/t51.2885-19/s150x150/30920544_298371590698348_4269672236434063360_n.jpg?_nc_ht=scontent-bog1-1.cdninstagram.com&_nc_ohc=hmQCN4Zfn2gAX8y8nst&tp=1&oh=27ec4ba469458416e06c9e46f603dc7e&oe=6058E85A",
   website: "https://react12.io",
   email: "garay.angela@gmail.com",
   bio: "This is my bio",
